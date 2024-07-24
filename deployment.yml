@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: unity_java
+spec:
+  selector:
+    matchLabels:
+      app: unity_java
+  template:
+    metadata:
+      labels:
+        app: unity_java
+    spec:
+      containers:
+      - name: unity_java
+        image: UNITY_IMAGE:TAG
+        ports:
+        - containerPort: 8080
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: unity_java-svc
+spec:
+  selector:
+    app: unity_java
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
