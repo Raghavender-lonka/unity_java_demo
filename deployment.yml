@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: unity_java
+  name: unity-java
 spec:
   selector:
     matchLabels:
-      app: unity_java
+      app: unity-java
   template:
     metadata:
       labels:
-        app: unity_java
+        app: unity-java
     spec:
       containers:
-      - name: unity_java
+      - name: unity-java
         image: 154100284802.dkr.ecr.us-east-1.amazonaws.com/UNITY-IMAGE:TAG
         ports:
         - containerPort: 8080
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: unity_java-svc
+  name: unity-java-svc
 spec:
   selector:
-    app: unity_java
+    app: unity-java
   type: LoadBalancer
   ports:
   - port: 8080
