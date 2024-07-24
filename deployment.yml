@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: unity_java
-        image: 154100284802.dkr.ecr.us-east-1.amazonaws.com/UNITY_IMAGE:TAG
+        image: 154100284802.dkr.ecr.us-east-1.amazonaws.com/UNITY-IMAGE:TAG
         ports:
         - containerPort: 8080
 
